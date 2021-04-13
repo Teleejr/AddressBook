@@ -22,7 +22,10 @@ public class MainRunner {
         catch (FileNotFoundException f) {
             f.printStackTrace();
         }//End catch
+
         for (String contact : contacts) System.out.println(contact);
+
+
 
 
     }
