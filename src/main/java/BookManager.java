@@ -19,7 +19,7 @@ public class BookManager implements Print{
             contacts.add(br.readLine());
         }
 
-        //Sort the contacts using Collections and print the result using a for loop.
+        //Sort the contacts using Collections by first and last name and print the result using a for loop.
         Collections.sort(contacts);
         for (String contact : contacts) System.out.println(contact);
     }
