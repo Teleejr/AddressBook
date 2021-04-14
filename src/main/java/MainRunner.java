@@ -12,7 +12,7 @@ public class MainRunner {
 
 
         BookManager bm = new BookManager();
-        /*
+
         List<Person> contactList = new ArrayList<>();
         FileReader fr = null;
         try {
@@ -31,7 +31,7 @@ public class MainRunner {
             }
         }
 
-
+/*
         System.out.println("------------------------------------");
         System.out.println(Arrays.toString(contactList.toArray()));
         System.out.println("------------------------------------");
@@ -71,36 +71,7 @@ public class MainRunner {
             }
             else if (menuChoice==1) {
                 //have the user enter another address and add it to the file
-
-                // enable scanner for input
-                Scanner input = new Scanner(System.in);
-
-                // array to tell user what to enter
-                String[] prompts = new String[9];
-                prompts[0] = "enter First Name";
-                prompts[1] = "enter Last Name";
-                prompts[2] = "enter Home Phone";
-                prompts[3] = "enter Mobile Phone";
-                prompts[4] = "enter Email";
-                prompts[5] = "enter Street";
-                prompts[6] = "enter Street Number";
-                prompts[7] = "enter Town";
-                prompts[8] = "enter Zip";
-
-                // array to save user input
-                String[] add = new String[9];
-
-                // display text from array and collect responses in array
-                for (int i=0; prompts.length>i; i++)
-                {
-                    System.out.println(prompts[i]);
-                    add[i] = input.nextLine();
-                }
-
-                // called add method to add user responses to file
-                Person p = new Person(add[0], add[1], Long.parseLong(add[2]), Long.parseLong(add[3]), add[4],
-                        new Address(Integer.parseInt(add[6]), add[5], add[7], Integer.parseInt(add[8])));
-
+                bm.enterAdd();
                 menuChoice = 0;
             }
             else if (menuChoice==2)
