@@ -46,7 +46,7 @@ public class MainRunner {
         //Person p = bm.update("Pete", "Mobile", "28865534");
 
 */
-
+        Scanner input = new Scanner(System.in);
       boolean end = false;
 
         int menuChoice = 0;
@@ -54,8 +54,6 @@ public class MainRunner {
         while (end==false) {
 
             if (menuChoice==0) {
-                Scanner input = new Scanner(System.in);
-
                 System.out.println("Please select an option: \n" +
                         "1. Add an entry. \n" +
                         "2. Edit entries - Search by name. \n" +
@@ -79,25 +77,45 @@ public class MainRunner {
             }
             else if (menuChoice==2)
             {
+                Person p = bm.update("Mary");
+                System.out.println("updated by name : "+p.toString());
                 menuChoice = 0;
             }
             else if (menuChoice==3)
             {
-                //get input
-                //run method to show input
+                Person p = bm.update(123456);
+                System.out.println("updated by phone : "+p.toString());
                 menuChoice = 0;
             }
             else if (menuChoice==4)
             {
-                menuChoice = 0;
+                System.out.println("enter name of contact that you want to remove : ");
+                String name = input.next();
+                boolean value = bm.remove(name);
+                if(value) {
+                    menuChoice = 6;
+                    System.out.println("removed recored with name : "+ name);
+                }else{
+                    menuChoice = 0;
+                }
             }
             else if (menuChoice==5)
             {
-
-                menuChoice = 0;
+                System.out.println("enter phone number that you want to remove : ");
+                long number  = input.nextLong();
+                boolean value = bm.remove(number);
+                if(value) {
+                    System.out.println("removed recored with number : "+ number);
+                    menuChoice = 6;
+                }else{
+                    menuChoice = 0;
+                }
             }
             else if (menuChoice==6)
             {
+                for (Person person : contactList) {
+                    System.out.println(person);
+                }
                 menuChoice = 0;
             }
             else if (menuChoice==7)
@@ -106,7 +124,7 @@ public class MainRunner {
             }
             else if (menuChoice==8)
             {
-
+                System.exit(0);
             }
 
         }

@@ -6,8 +6,9 @@ import java.util.*;
 /**
  * The type Book manager.
  */
-public class BookManager implements Add, Update<Person>, Search<Person> {
+public class BookManager implements Add, Update<Person>, Search<Person>, Remove {
 
+    List<Person> persons = new ArrayList<>();
     //method to append users input into file
     public void enterAdd() {
         // enable scanner for input
@@ -42,23 +43,52 @@ public class BookManager implements Add, Update<Person>, Search<Person> {
     //search person by phone
     @Override
     public Person search(String name) {
-        return null;
+        Person p = new Person();
+        for (int i = 0; i < persons.size(); i++) {
+            if(persons.get(i).getName().equalsIgnoreCase(name)){
+                p = persons.get(i);
+            }
+        }
+        return p;
     }
 
     //search person by name
     @Override
     public Person search(long phone) {
-        return null;
+        Person p = new Person();
+        for (int i = 0; i < persons.size(); i++) {
+            if(persons.get(i).getPhone() == phone){
+                p = persons.get(i);
+                break;
+            }
+        }
+        return p;
     }
 
     @Override
     public Person update(String name) {
-        return null;
+        Person p = search(name);
+        p.setEmail("mary@outlook.fr");
+        return p;
     }
 
     @Override
     public Person update(long phone) {
-        return null;
+        Person p = search(phone);
+        p.setName("foo");
+        return p;
+    }
+
+    @Override
+    public boolean remove(String name) {
+        Person p = search(name);
+        return persons.remove(p);
+    }
+
+    @Override
+    public boolean remove(long phone) {
+        Person p = search(phone);
+        return persons.remove(p);
     }
 
 
@@ -72,8 +102,7 @@ public class BookManager implements Add, Update<Person>, Search<Person> {
    public List<Person> getAllContactFromFile(FileReader fr) throws IOException {
 
         BufferedReader br = new BufferedReader(fr);  //creates a buffering character input stream
-        Person p = null;  // new object
-        List<Person> persons = new ArrayList<>();
+        Person p = null;  // new objec
         String line;  // String to hold content
 
         while ((line = br.readLine()) != null)  // while the line is not empty
@@ -87,6 +116,7 @@ public class BookManager implements Add, Update<Person>, Search<Person> {
         }
         return persons;
     }
+
 
 
 }
