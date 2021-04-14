@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public interface Add {
 
-
     default void addAddress(String name, String surname, String phone, String mobile, String email, String street, String number, String town, String zip) {
 
         //set access to file
