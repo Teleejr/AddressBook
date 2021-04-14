@@ -1,17 +1,15 @@
 package org.perscholas.data;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * The type Book manager.
  */
-public class BookManager implements Add<Person>, Update<Person>, Search<Person> {
+public class BookManager implements Add, Update<Person>, Search<Person> {
 
-    //add a new contact in the list
-    @Override
-    public void add(Person person) {
+    //method to append users input into file
+    public void enterAdd() {
 
     }
 
@@ -40,8 +38,6 @@ public class BookManager implements Add<Person>, Update<Person>, Search<Person> 
     //search person by name
     @Override
     public Person search(long phone) {
-        //write logic of sarch funtion
-
         return null;
     }
 
@@ -53,11 +49,11 @@ public class BookManager implements Add<Person>, Update<Person>, Search<Person> 
      * @return the all contact from file
      * @throws IOException the io exception
      */
-    public List<Person> getAllContactFromFile(FileReader fr) throws IOException {
+   /* public List<Person> getAllContactFromFile(FileReader fr) throws IOException {
 
         BufferedReader br = new BufferedReader(fr);  //creates a buffering character input stream
         Person p = null;  // new object
-        List<Person> persons = new ArrayList<>();
+        List<Person> persons = new List<>();
         String line;  // String to hold content
 
         while ((line = br.readLine()) != null)  // while the line is not empty
@@ -70,7 +66,7 @@ public class BookManager implements Add<Person>, Update<Person>, Search<Person> 
             words = new String[9]; //remove data from arrays
         }
         return persons;
-    }
+    }*/
 
 
 }

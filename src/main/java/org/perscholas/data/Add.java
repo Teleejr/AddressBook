@@ -5,14 +5,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public interface Add<T> {
+public interface Add {
 
-    public void add(T t);
-/*
+    // Method to add new address to address book
     default void addAddress(String name, String surname, String phone, String mobile, String email, String street, String number, String town, String zip) {
 
         //set access to file
-        File file = new File("src/main/resources/org.perscholas.data.Address.csv");
+        File file = new File("src/main/resources/Address.csv");
 
         BufferedWriter buffer = null;
 
@@ -40,6 +39,4 @@ public interface Add<T> {
             }
         }
     }
-
- */
 }
