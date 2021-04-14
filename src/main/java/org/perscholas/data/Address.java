@@ -1,6 +1,8 @@
+package org.perscholas.data;
+
 import java.util.Scanner;
 
-public class Address implements Add, Print{
+public class Address implements Add, Print {
 
         // enable scanner for input
         Scanner input = new Scanner(System.in);
