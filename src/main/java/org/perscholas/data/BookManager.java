@@ -36,8 +36,13 @@ public class BookManager implements Add, Update<Person>, Search<Person>, Remove 
             add[i] = input.nextLine();
         }
 
-        // called add method to add user responses to file
+          // called add method to add user responses to file
         addAddress(add[0], add[1], add[2], add[3], add[4], add[5], add[6], add[7], add[8]);
+
+        // add new contact to the list<Person>
+        Person p = new Person(add[0], add[1], Long.parseLong(add[2]), Long.parseLong(add[3]), add[4], new Address(Integer.parseInt(add[5]), add[6], add[7], Integer.parseInt(add[8])));
+        persons.add(p);
+
     }
 
     //search person by phone

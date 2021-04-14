@@ -57,7 +57,8 @@ public class MainRunner {
             else if (menuChoice==1) {
                 //have the user enter another address and add it to the file
                 bm.enterAdd();
-                System.out.println("Address Added");
+
+                System.out.println("Contact Added");
 
                 //restart main menu
                 menuChoice = 0;
