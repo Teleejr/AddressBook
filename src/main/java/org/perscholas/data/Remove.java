@@ -1,5 +1,6 @@
 package org.perscholas.data;
 
 public interface Remove<T> {
-    void remove(T t);
+    void remove(String name);
+    void remove(long phone);
 }
