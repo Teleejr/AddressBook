@@ -1,5 +1,5 @@
 package org.perscholas.data;
 
 public interface Remove<T> {
-    void remove(T object);
+    void remove(T t);
 }
