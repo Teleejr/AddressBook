@@ -129,12 +129,7 @@ public class MainRunner {
             }
             else if (menuChoice==9)
             {
-                contactList.sort(new Comparator<Person>() {
-                    @Override
-                    public int compare(Person o1, Person o2) {
-                        return o1.getSurname().compareTo(o2.getSurname());
-                    }
-                });
+                contactList.sort((Person o1, Person o2) -> o1.getSurname().compareTo(o2.getSurname()));
                 for (Person person : contactList) {
                     System.out.println(person);
                 }
