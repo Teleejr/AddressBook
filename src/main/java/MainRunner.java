@@ -1,31 +1,21 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 public class MainRunner {
 
-    public static void main(String[] args) {
-        File fileName = new File("src/main/resources/Address.csv");
-        List<String> contacts = null;
-        Scanner scan;
+    public static void main(String[] args) throws IOException {
+        FileReader fileName = new FileReader("src/main/resources/Address.csv");
+        List<String> contacts = new ArrayList<>();
+        BufferedReader br = new BufferedReader(fileName);
 
-        try {
-            scan = new Scanner(fileName);
-            contacts = new ArrayList<>();
+        while(br.ready()) {
+            contacts.add(br.readLine());
+        }
 
-            while(scan.hasNextLine()) {
-                contacts.add(scan.nextLine());
-            }//End while
-
-        }//End try
-        catch (FileNotFoundException f) {
-            f.printStackTrace();
-        }//End catch
-
+        Collections.sort(contacts);
         for (String contact : contacts) System.out.println(contact);
-
-
 
 
     }
