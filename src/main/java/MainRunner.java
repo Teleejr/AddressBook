@@ -72,6 +72,9 @@ public class MainRunner {
             else if (menuChoice==1) {
                 //have the user enter another address and add it to the file
                 bm.enterAdd();
+                System.out.println("Address Added");
+
+                //restart main menu
                 menuChoice = 0;
             }
             else if (menuChoice==2)
