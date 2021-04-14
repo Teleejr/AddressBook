@@ -1,10 +1,6 @@
-import java.io.File;
 import java.util.Scanner;
 
 public class Address implements Add, Print{
-
-        //create access to file for address book
-        File file = new File("src/main/resources/Address.csv");
 
         // enable scanner for input
         Scanner input = new Scanner(System.in);
@@ -34,7 +30,7 @@ public class Address implements Add, Print{
             }
 
             // called add method to add user responses to file
-            Add(add[0], add[1], add[2], add[3], add[4], add[5], add[6], add[7], add[8]);
+            addAddress(add[0], add[1], add[2], add[3], add[4], add[5], add[6], add[7], add[8]);
         }
     }
 
