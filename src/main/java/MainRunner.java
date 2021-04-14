@@ -1,9 +1,14 @@
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
+import org.perscholas.data.Address;
+import org.perscholas.data.BookManager;
+import org.perscholas.data.Person;
+
 
 public class MainRunner {
 
@@ -38,6 +43,16 @@ public class MainRunner {
         {
             e.printStackTrace(); // if exception print stack trace
         }
+
+
+//        //instanciate new contact
+//        Person p = new Person("Pete", "Prattis", 210123456, 123456, "pete@mail.com",
+//                new Address(1, "Newstrt", "Athens", 1234));
+//        Person p2 = new Person("Adam", "Adams", 210234567, 123987, "adam@mail.com",
+//                new Address(21, "Oldstrt", "London", 5553));
+        BookManager bm = new BookManager();
+        Person p = bm.update("Pete", "Mobile", "28865534");
+
 
 
     }
