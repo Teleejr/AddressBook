@@ -1,3 +1,5 @@
+package org.perscholas.data;
+
 import java.util.List;
 
 public class BookManager implements Print{
