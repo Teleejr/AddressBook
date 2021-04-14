@@ -38,8 +38,29 @@ public class MainRunner {
         Person p2 = bm.search(contactList.get(2).getPhone());
         System.out.println("some text : "+p2.toString());
 
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Enter a Mobile Number without dashes ");
+
+        //update operation
+        //update by phone
+        Person person = bm.update(987652);
+        System.out.println("updated name : "+person.getName());
+        System.out.println("updated person with phone : "+person.toString());
+
+        //update by name
+        Person person1 = bm.update("Mary");
+        System.out.println("updated person with name :  : "+person1.toString());
+
+        //remobe contact by phone
+        bm.remove(908767);
+        //print new list after removing
+        contactList.stream().forEach(System.out::println);
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a Mobile Number without dashes ");
+
+
+
+
+
             //System.out.println("Mobile number " +scan+ "is in the address book: " + line.contains (scan));
 
         //Person p = bm.update("Pete", "Mobile", "28865534");

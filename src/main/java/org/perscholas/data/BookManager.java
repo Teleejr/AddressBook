@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * The type Book manager.
  */
-public class BookManager implements Add<Person>, Update<Person>, Search<Person> {
-
+public class BookManager implements Add<Person>, Update<Person>, Search<Person>, Remove<Person>{
+    List<Person> persons = new ArrayList<>();
     //add a new contact in the list
     @Override
     public void add(Person person) {
@@ -17,17 +17,32 @@ public class BookManager implements Add<Person>, Update<Person>, Search<Person> 
 
     //update person by name
     @Override
-    public Person update(String name, String element, String value) {
+    public Person update(String name) {
        //insert search implementation
-        //write logic of update  funtion
-        return null;
+        Person p = new Person(); ;
+        for (Person person : persons) {
+            if (person.getName().equalsIgnoreCase(name)) {
+                p = person;
+                break;
+            }
+        }
+        p.setPhone(987665);
+        return p;
     }
 
     //update person by phone
     @Override
-    public Person update(long phone, String element, String value) {
-       //insert search implementation
-       return null;
+    public Person update(long phone) {
+       //insert search implementationPerson
+        Person p = new Person(); ;
+        for (Person person : persons) {
+            if (person.getMobile() == phone) {
+                p = person;
+                break;
+            }
+        }
+       p.setName("foo");
+       return p;
     }
 
 
@@ -45,6 +60,23 @@ public class BookManager implements Add<Person>, Update<Person>, Search<Person> 
         return null;
     }
 
+    @Override
+    public void remove(String name) {
+
+    }
+
+    @Override
+    public void remove(long phone) {
+        Person p = new Person(); ;
+        for (Person person : persons) {
+            if (person.getMobile() == phone) {
+                p = person;
+                break;
+            }
+        }
+        persons.remove(p);
+    }
+
 
     /**
      * Gets all contact from file.
@@ -57,7 +89,6 @@ public class BookManager implements Add<Person>, Update<Person>, Search<Person> 
 
         BufferedReader br = new BufferedReader(fr);  //creates a buffering character input stream
         Person p = null;  // new object
-        List<Person> persons = new ArrayList<>();
         String line;  // String to hold content
 
         while ((line = br.readLine()) != null)  // while the line is not empty
@@ -71,6 +102,4 @@ public class BookManager implements Add<Person>, Update<Person>, Search<Person> 
         }
         return persons;
     }
-
-
 }
