@@ -7,10 +7,12 @@ import java.util.List;
 /**
  * The type Book manager.
  */
-public class BookManager implements Print<Person>, Update<Person>, Search<Person> {
+public class BookManager implements Add<Person>, Update<Person>, Search<Person> {
+
+    //add a new contact in the list
     @Override
-    public void print(List<Person> p) {
-        //write logic of print funtion
+    public void add(Person person) {
+
     }
 
     //update person by name
@@ -69,4 +71,6 @@ public class BookManager implements Print<Person>, Update<Person>, Search<Person
         }
         return persons;
     }
+
+
 }

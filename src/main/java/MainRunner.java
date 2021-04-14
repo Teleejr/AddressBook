@@ -1,6 +1,3 @@
-public class MainRunner {
-
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,10 +7,8 @@ import org.perscholas.data.Address;
 import org.perscholas.data.BookManager;
 import org.perscholas.data.Person;
 
+public class MainRunner {
     public static void main(String[] args) {
-
-
-        
 
 
         BookManager bm = new BookManager();
@@ -40,7 +35,7 @@ import org.perscholas.data.Person;
         System.out.println(Arrays.toString(contactList.toArray()));
         System.out.println("------------------------------------");
 
-            Person p2 = bm.search(contactList.get(2).getPhone());
+        Person p2 = bm.search(contactList.get(2).getPhone());
         System.out.println("some text : "+p2.toString());
 
             Scanner scan = new Scanner(System.in);
@@ -49,6 +44,8 @@ import org.perscholas.data.Person;
 
         //Person p = bm.update("Pete", "Mobile", "28865534");
 
+
+        /*
       boolean end = false;
 
         //instantiate the person class
@@ -104,6 +101,6 @@ import org.perscholas.data.Person;
 
         }
 
-
+*/
     }
 }

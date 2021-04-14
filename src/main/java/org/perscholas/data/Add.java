@@ -5,8 +5,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public interface Add {
+public interface Add<T> {
 
+    public void add(T t);
+/*
     default void addAddress(String name, String surname, String phone, String mobile, String email, String street, String number, String town, String zip) {
 
         //set access to file
@@ -38,4 +40,6 @@ public interface Add {
             }
         }
     }
+
+ */
 }
