@@ -31,27 +31,12 @@ public class MainRunner {
             }
         }
 
-/*
-        System.out.println("------------------------------------");
-        System.out.println(Arrays.toString(contactList.toArray()));
-        System.out.println("------------------------------------");
-
-        Person p2 = bm.search(contactList.get(2).getPhone());
-        System.out.println("some text : "+p2.toString());
-
-
-            System.out.println("Enter a Mobile Number without dashes ");
-            //System.out.println("Mobile number " +scan+ "is in the address book: " + line.contains (scan));
-
-        //Person p = bm.update("Pete", "Mobile", "28865534");
-
-*/
         Scanner input = new Scanner(System.in);
       boolean end = false;
 
         int menuChoice = 0;
 
-        while (end==false) {
+        while (!end) {
 
             if (menuChoice==0) {
                 System.out.println("Please select an option: \n" +
@@ -59,10 +44,12 @@ public class MainRunner {
                         "2. Edit entries - Search by name. \n" +
                         "3. Edit entries - Search by mobile number. \n" +
                         "4. Delete an entry - Search by name. \n" +
-                        "5. Delete an entry - Search by mobile number." +
-                        "6. View all entries in address book - Sorted by name. \n" +
-                        "7. View all entries in address book - Sorted by mobile number. \n" +
-                        "8. Exit address book.");
+                        "5. Delete an entry - Search by mobile number.\n" +
+                        "6. Search by name. \n" +
+                        "7. Search by mobile number. \n" +
+                        "8. View all entries in address book - Sorted by name. \n" +
+                        "9. View all entries in address book - Sorted by surname. \n" +
+                        "99. Exit address book.");
 
                 menuChoice = input.nextInt();
 
@@ -113,20 +100,50 @@ public class MainRunner {
             }
             else if (menuChoice==6)
             {
+                System.out.println("enter name that you want to search : ");
+                String name  = input.next();
+                Person p = bm.search(name);
+                System.out.println(p.toString());
+                menuChoice = 0;
+            }
+            else if (menuChoice==7)
+            {
+                System.out.println("enter phone number that you want to search : ");
+                long number  = input.nextLong();
+                Person p = bm.search(number);
+                System.out.println(p.toString());
+                menuChoice = 0;
+            }
+            else if (menuChoice==8)
+            {
+                contactList.sort(new Comparator<Person>() {
+                    @Override
+                    public int compare(Person o1, Person o2) {
+                        return o1.getName().compareTo(o2.getName());
+                    }
+                });
                 for (Person person : contactList) {
                     System.out.println(person);
                 }
                 menuChoice = 0;
             }
-            else if (menuChoice==7)
+            else if (menuChoice==9)
             {
+                contactList.sort(new Comparator<Person>() {
+                    @Override
+                    public int compare(Person o1, Person o2) {
+                        return o1.getSurname().compareTo(o2.getSurname());
+                    }
+                });
+                for (Person person : contactList) {
+                    System.out.println(person);
+                }
                 menuChoice = 0;
             }
-            else if (menuChoice==8)
+            else if (menuChoice==99)
             {
-                System.exit(0);
+                end = true;
             }
-
         }
 
     }
