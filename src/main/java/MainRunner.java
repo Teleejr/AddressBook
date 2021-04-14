@@ -1,41 +1,60 @@
-import java.util.Scanner;
-
 public class MainRunner {
 
     public static void main(String[] args) {
 
-        // enable scanner for input
-        Scanner input = new Scanner(System.in);
+        boolean end = false;
 
-        //instantiate person class to call add method
-        Person p = new Person();
+        //instantiate the person class
+        Address a = new Address();
 
-        // array to tell user what to enter
-        String[] prompts = new String[9];
-        prompts[0] = "enter First Name";
-        prompts[1] = "enter Last Name";
-        prompts[2] = "enter Home Phone";
-        prompts[3] = "enter Mobile Phone";
-        prompts[4] = "enter Email";
-        prompts[5] = "enter Street";
-        prompts[6] = "enter Street Number";
-        prompts[7] = "enter Town";
-        prompts[8] = "enter Zip";
+        while (end==false) {
 
-        // array to save user input
-        String[] add = new String[9];
+            System.out.println("Please select an option: \n" +
+                    "1. Add an entry. \n" +
+                    "2. Edit entries - Search by name. \n" +
+                    "3. Edit entries - Search by mobile number. \n" +
+                    "4. Delete an entry - Search by name. \n" +
+                    "5. Delete an entry - Search by mobile number." +
+                    "6. View all entries in address book - Sorted by name. \n" +
+                    "7. View all entries in address book - Sorted by mobile number. \n" +
+                    "8. Exit address book.");
 
-        // display text from array and collect responses in array
-        for (int i=0; prompts.length>i; i++)
-        {
-            System.out.println(prompts[i]);
-            add[i] = input.nextLine();
+            int menuChoice = 0;
+
+            if (menuChoice==1) {
+                //have the user enter another address and add it to the file
+                a.enterAdd();
+            }
+            else if (menuChoice==2)
+            {
+
+            }
+            else if (menuChoice==3)
+            {
+
+            }
+            else if (menuChoice==4)
+            {
+
+            }
+            else if (menuChoice==5)
+            {
+
+            }
+            else if (menuChoice==6)
+            {
+                a.viewByName();
+            }
+            else if (menuChoice==7)
+            {
+
+            }
+            else if (menuChoice==8)
+            {
+
+            }
+
         }
-
-        // called add method to add user responses to file
-        p.add(add[0], add[1], add[2], add[3], add[4], add[5], add[6], add[7], add[8]);
-
-
 
 
     }
