@@ -1,3 +1,5 @@
+package org.perscholas.data;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -9,7 +11,7 @@ public interface Add {
     default void addAddress(String name, String surname, String phone, String mobile, String email, String street, String number, String town, String zip) {
 
         //set access to file
-        File file = new File("src/main/resources/Address.csv");
+        File file = new File("src/main/resources/org.perscholas.data.Address.csv");
 
         BufferedWriter buffer = null;
 
