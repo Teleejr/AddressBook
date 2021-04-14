@@ -263,3 +263,10 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,intellij+iml,eclipse,maven,java
+/compiler.xml
+/csv-plugin.xml
+/jarRepositories.xml
+/libraries/Maven__org_projectlombok_lombok_1_18_20.xml
+/misc.xml
+/uiDesigner.xml
+/vcs.xml
